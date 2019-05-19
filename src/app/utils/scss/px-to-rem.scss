@@ -1,0 +1,18 @@
+/**
+ * Convert px value to rem
+ * Inspired by: https://css-tricks.com/snippets/css/less-mixin-for-rem-font-sizing/
+ * @pxValue  {number} Pixel value to convert to rem
+ *
+ * Usage:
+ * element {
+ *     padding-top: rem(80); // Outputs 5rem, same as 80px
+ * }
+ */
+@function px-to-rem($pxValue: 1) {
+    @return #{$pxValue / $px}rem;
+}
+
+// Alias
+@function rem($pxValue: 1) {
+    @return px-to-rem($pxValue);
+}

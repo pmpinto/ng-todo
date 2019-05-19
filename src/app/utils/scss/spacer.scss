@@ -1,0 +1,26 @@
+/**
+ * Get proportional spacers with the same base spacer unit (8px). The value will
+ * then be passed to the `rem()` function, so 8px is 0.5rem.
+ *
+ * ATTENTION:
+ * Do not use any value that would not compile into an integer.
+ * For instance, `spacer(0.2)` returns `1.6`, which is bad because we're dealing
+ * with screens and we can't fill just 0.6 of a pixel.
+ *
+ * Examples:
+ * spacer(0.25) = 8px * 0.25 = 2px
+ * spacer(0.5) = 8px * 0.5 = 4px
+ * spacer(1) = 8px * 1 = 8px
+ * spacer(1.5) = 8px * 1.5 = 12px
+ * spacer(2) = 8px * 2 = 16px
+ *
+ * @multiplier  {number} Value to multiply the space unit by
+ *
+ * Usage:
+ * element {
+ *     padding-top: spacer(3); // Outputs 1.5rem, same as 24px
+ * }
+ */
+@function spacer($multiplier: 1) {
+    @return rem($spacer-unit * $multiplier);
+}

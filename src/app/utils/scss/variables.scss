@@ -1,0 +1,143 @@
+// Inspired by: https://github.com/janogarcia/bentocss
+
+@import "px-to-rem.scss";
+
+// Global units
+// #############################################################################
+$px: 16;
+$px-breakpoint: 16;
+
+// Breakpoints
+// #############################################################################
+$small: 320;
+$medium: 768;
+$large: 980;
+$xlarge: 1200;
+
+$breakpoint-small: #{$small / $px-breakpoint}em;
+$breakpoint-medium: #{$medium / $px-breakpoint}em;
+$breakpoint-large: #{$large / $px-breakpoint}em;
+$breakpoint-xlarge: #{$xlarge / $px-breakpoint}em;
+
+$breakpoint-small-landscape: "orientation: landscape";
+
+$breakpoint-media-small: "min-width: #{$breakpoint-small}";
+$breakpoint-media-medium: "min-width: #{$breakpoint-medium}";
+$breakpoint-media-large: "min-width: #{$breakpoint-large}";
+$breakpoint-media-xlarge: "min-width: #{$breakpoint-xlarge}";
+
+// Media queries aliases
+// #############################################################################
+
+/**
+ * Usage:
+ * @media ($md) {
+ *     // Styles for tablets and above
+ * }
+ */
+
+$sm-landscape: $breakpoint-small-landscape;
+$sm: $breakpoint-media-small;
+$md: $breakpoint-media-medium;
+$lg: $breakpoint-media-large;
+$xlg: $breakpoint-media-xlarge;
+
+// Colors
+// #############################################################################
+// Avoid using these directly
+$color-white: #fff;
+$color-dark-blue: #323a4a;
+$color-light-blue: #b4bfcf;
+$color-light-yellow: #fffefa;
+$color-camel: #e6c491;
+$color-green: #8d9c87;
+$color-red: #db7171;
+
+// Color aliases
+// Use these ones instead, they add purpose and meaning, so they're easier to remember
+$color-brand: $color-dark-blue;
+$color-background: $color-light-yellow;
+
+$color-heading: $color-brand;
+$color-text: $color-brand;
+$color-text-muted: $color-light-blue;
+
+$color-link: $color-brand;
+$color-link-hover: lighten($color-link, 10%);
+
+$color-selection-background: darken($color-camel, 30%);
+$color-selection-text: $color-text;
+
+$color-highlight: lighten($color-camel, 15%);
+$color-highlight-text: lighten($color-text, 15%);
+
+$color-border: fade-out($color: $color-light-blue, $amount: 0.75);
+
+$color-plan-corporate: $color-light-blue;
+$color-plan-private: $color-camel;
+
+$color-error: $color-red;
+
+// Type
+// #############################################################################
+$font-family: "Montserrat", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+$font-family-monospace: "Source Code Pro", "Consolas", monospace;
+
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-bold: 700;
+
+$font-size-text-tiny: rem(10);
+$font-size-text-small: rem(12);
+$font-size-text-medium: rem(14);
+$font-size-text: rem(16);
+$font-size-text-bigger: rem(18.8);
+$font-size-text-huge: rem(25.8);
+
+$font-size-text-sm: $font-size-text-small;
+$font-size-text-md: $font-size-text;
+$font-size-text-lg: $font-size-text-bigger;
+
+$font-size-h1-sm: rem(18.8);
+$font-size-h1-md: rem(25.8);
+$font-size-h1-lg: rem(49.4);
+$font-size-h1: $font-size-h1-lg;
+
+$font-size-h2: rem(24);
+
+$font-size-h3-sm: rem(16);
+$font-size-h3-md: rem(18.8);
+$font-size-h3-lg: rem(25.8);
+$font-size-h3: $font-size-h3-lg;
+
+$font-size-h4: rem(16);
+
+$font-size-h5-sm: rem(10);
+$font-size-h5-md: $font-size-h5-sm;
+$font-size-h5-lg: rem(16);
+$font-size-h5: $font-size-h5-lg;
+
+$font-size-h6: rem(12);
+
+$font-line-height-text: 1.5;
+$font-line-height-heading: 1.1;
+
+// Spacers
+// Please refer to spacer.scss to see how you can use the `spacer()` function.
+// #############################################################################
+$spacer-unit: 8; // In px
+
+// Shadow
+// Inspired by: https://codepen.io/sdthornton/pen/wBZdXq
+// #############################################################################
+$box-shadow-z1: 0 0 2px rgba(0, 0, 0, 0.08);
+$box-shadow-z2: 0 2px 4px rgba(0, 0, 0, 0.08);
+$box-shadow-z3: 0 2px 4px rgba(0, 0, 0, 0.05), 0 4px 16px rgba(0, 0, 0, 0.08);
+
+// Transition & Animation
+// Ref: https://easings.net/
+// #############################################################################
+$ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+
+$transition-timing-default: 250ms $ease-out-expo;
+$transition-timing-slow: 1000ms $ease-out-expo;

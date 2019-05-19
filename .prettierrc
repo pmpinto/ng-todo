@@ -1,0 +1,5 @@
+# https://prettier.io/docs/en/options.html
+printWidth: 120
+tabs: false
+tabWidth: 4
+singleQuote: false

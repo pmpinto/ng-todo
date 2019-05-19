@@ -1,1 +1,10 @@
-/* You can add global styles to this file, and also import other style files */
+// Base - CSS framework
+@import "~@getbase/base/scss/index";
+@import "~@getbase/containers/scss/index";
+@import "~@getbase/grid/scss/index";
+
+// Montserrat font
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,700");
+
+// Project defaults
+@import "app/utils/scss/defaults.scss";
