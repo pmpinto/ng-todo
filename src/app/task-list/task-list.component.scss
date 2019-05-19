@@ -1,0 +1,109 @@
+@import "../utils/scss/variables.scss";
+@import "../utils/scss/px-to-rem.scss";
+
+.task-list {
+    padding-left: 0;
+}
+
+.task-list__item {
+    padding: rem(16) rem(8);
+    list-style: none;
+    border-bottom: 1px solid $color-border;
+    display: flex;
+    align-items: center;
+
+    &:last-child {
+        border-bottom: none;
+    }
+}
+
+.task-list__actions {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.task-list__button {
+    cursor: pointer;
+    width: rem(24);
+    height: rem(24);
+    border-radius: rem(12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $color-text;
+
+    &:hover {
+        background-color: $color-text;
+        color: $color-white;
+    }
+}
+
+.task-list__button--delete {
+}
+
+.task-list__button-icon {
+    display: block;
+    width: rem(12);
+}
+
+.task-list__checkbox {
+    width: rem(24);
+    height: rem(24);
+    border-radius: rem(12);
+    border: 1px solid $color-border;
+    background-color: $color-white;
+    margin-right: rem(8);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .task-list__button-icon {
+        opacity: 0;
+    }
+
+    &:hover {
+        border-color: darken($color: $color-border, $amount: 50%);
+
+        .task-list__button-icon {
+            opacity: 1;
+        }
+    }
+}
+
+.task-list__item--completed {
+    .task-list__checkbox {
+        .task-list__button-icon {
+            opacity: 1;
+        }
+    }
+
+    .task-list__text {
+        color: $color-text-muted;
+    }
+}
+
+.task-list__form {
+    width: 100%;
+    position: relative;
+
+    .task-list__button {
+        position: absolute;
+        top: rem(6);
+        right: rem(6);
+        background-color: $color-camel;
+
+        &:hover {
+            background-color: darken($color: $color-camel, $amount: 5%);
+            color: lighten($color: $color-text, $amount: 5%);
+        }
+    }
+}
+
+.task-list__input {
+    border-radius: rem(4);
+    border: 1px solid $color-border;
+    padding: rem(8);
+    width: 100%;
+}

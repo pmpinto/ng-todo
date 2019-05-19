@@ -1,0 +1,21 @@
+@import "../utils/scss/variables.scss";
+@import "../utils/scss/px-to-rem.scss";
+
+.page-user__uncompleted-list {
+    display: block;
+    margin-bottom: rem(40);
+}
+
+.page-user__heading {
+    font-size: rem(12);
+    text-transform: uppercase;
+    letter-spacing: rem(4);
+    font-weight: $font-weight-normal;
+    color: $color-text-muted;
+}
+
+.page-user__notice {
+    font-size: rem(16);
+    color: $color-text-muted;
+    text-align: center;
+}

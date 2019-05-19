@@ -1,0 +1,43 @@
+@import "../utils/scss/variables.scss";
+@import "../utils/scss/px-to-rem.scss";
+
+.task-create {
+    padding: rem(40) 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.task-create__input {
+    padding: rem(16);
+    border-radius: rem(4);
+    border: 1px solid $color-border;
+    background-color: $color-white;
+    font-size: rem(16);
+    line-height: 1;
+    font-weight: $font-weight-normal;
+    width: 100%;
+    margin-bottom: rem(16);
+}
+
+.task-create__button {
+    font-size: rem(12);
+    font-weight: $font-weight-bold;
+    letter-spacing: rem(4);
+    padding: rem(16);
+    border-radius: rem(24);
+    text-transform: uppercase;
+    background-color: $color-camel;
+    color: $color-text;
+    width: 100%;
+    cursor: pointer;
+
+    &:hover:not([disabled]) {
+        background-color: darken($color: $color-camel, $amount: 5%);
+        color: lighten($color: $color-text, $amount: 5%);
+    }
+
+    &[disabled] {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+}

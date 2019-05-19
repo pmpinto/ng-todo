@@ -1,0 +1,35 @@
+<ul class="task-list">
+    <li *ngFor="let item of list" class="task-list__item" [ngClass]="{ 'task-list__item--completed': item.completed }">
+        <!-- EDITING MODE -->
+        <ng-container *ngIf="isEditingTask(item.id)">
+            <form class="task-list__form">
+                <input
+                    class="task-list__input"
+                    type="text"
+                    [value]="item.text"
+                    [(ngModel)]="item.text"
+                    name="editingTask"
+                />
+                <button class="task-list__button" (click)="updateTaskText(item)">
+                    <app-icon-library class="task-list__button-icon" icon="icon-check-mark.svg"></app-icon-library>
+                </button>
+            </form>
+        </ng-container>
+
+        <!-- VIEW MODE -->
+        <ng-container *ngIf="!isEditingTask(item.id)">
+            <button class="task-list__checkbox" (click)="toggleCompleteTask(item)">
+                <app-icon-library class="task-list__button-icon" icon="icon-check-mark.svg"></app-icon-library>
+            </button>
+            <span class="task-list__text">{{ item.text }}</span>
+            <div class="task-list__actions">
+                <button class="task-list__button task-list__button--edit" (click)="toggleEditTask(item.id)">
+                    <app-icon-library class="task-list__button-icon" icon="icon-pencil.svg"></app-icon-library>
+                </button>
+                <button class="task-list__button task-list__button--delete" (click)="deleteTask(item.id)">
+                    <app-icon-library class="task-list__button-icon" icon="icon-trash.svg"></app-icon-library>
+                </button>
+            </div>
+        </ng-container>
+    </li>
+</ul>

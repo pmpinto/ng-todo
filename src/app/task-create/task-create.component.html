@@ -1,0 +1,6 @@
+<form class="task-create" [formGroup]="taskForm">
+    <input type="text" placeholder="Add a new task" class="task-create__input" formControlName="text" />
+    <button class="task-create__button" (click)="createTask(taskForm.value.text)" [disabled]="taskForm.invalid">
+        Add task
+    </button>
+</form>

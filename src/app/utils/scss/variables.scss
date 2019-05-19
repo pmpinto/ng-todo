@@ -71,10 +71,10 @@ $color-selection-text: $color-text;
 $color-highlight: lighten($color-camel, 15%);
 $color-highlight-text: lighten($color-text, 15%);
 
-$color-border: fade-out($color: $color-light-blue, $amount: 0.75);
-
-$color-plan-corporate: $color-light-blue;
-$color-plan-private: $color-camel;
+$color-border: fade-out(
+    $color: $color-light-blue,
+    $amount: 0.75
+);
 
 $color-error: $color-red;
 
@@ -98,22 +98,22 @@ $font-size-text-sm: $font-size-text-small;
 $font-size-text-md: $font-size-text;
 $font-size-text-lg: $font-size-text-bigger;
 
-$font-size-h1-sm: rem(18.8);
-$font-size-h1-md: rem(25.8);
+// $font-size-h1-sm: rem(18.8);
+// $font-size-h1-md: rem(25.8);
 $font-size-h1-lg: rem(49.4);
 $font-size-h1: $font-size-h1-lg;
 
 $font-size-h2: rem(24);
 
-$font-size-h3-sm: rem(16);
-$font-size-h3-md: rem(18.8);
+// $font-size-h3-sm: rem(16);
+// $font-size-h3-md: rem(18.8);
 $font-size-h3-lg: rem(25.8);
 $font-size-h3: $font-size-h3-lg;
 
 $font-size-h4: rem(16);
 
-$font-size-h5-sm: rem(10);
-$font-size-h5-md: $font-size-h5-sm;
+// $font-size-h5-sm: rem(10);
+// $font-size-h5-md: $font-size-h5-sm;
 $font-size-h5-lg: rem(16);
 $font-size-h5: $font-size-h5-lg;
 

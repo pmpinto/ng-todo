@@ -8,7 +8,8 @@
         "api": "json-server --watch src/app/db.json --port 3200",
         "test": "ng test",
         "lint": "ng lint",
-        "e2e": "ng e2e"
+        "e2e": "ng e2e",
+        "build-icon-library": "node --experimental-modules node_scripts/build-icon-library.js"
     },
     "private": true,
     "dependencies": {

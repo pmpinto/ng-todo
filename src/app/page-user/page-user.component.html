@@ -1,0 +1,24 @@
+<div class="page-user">
+    <div class="container-full container-m">
+        <app-task-create (onTaskCreate)="getAllUncompletedTasks()"></app-task-create>
+
+        <app-task-list
+            class="page-user__uncompleted-list"
+            [list]="userUncompletedTasks"
+            (onDeleteTask)="getAllUncompletedTasks()"
+            (onUpdateTask)="refreshLists()"
+        ></app-task-list>
+
+        <h1 class="page-user__heading">Completed tasks</h1>
+        <p class="page-user__notice" *ngIf="userCompletedTasks && userCompletedTasks.length < 1">
+            Your completed items will be listed here
+        </p>
+        <app-task-list
+            class="page-user__completed-list"
+            [list]="userCompletedTasks"
+            (onDeleteTask)="getAllCompletedTasks()"
+            (onUpdateTask)="refreshLists()"
+            *ngIf="userCompletedTasks && userCompletedTasks.length"
+        ></app-task-list>
+    </div>
+</div>
