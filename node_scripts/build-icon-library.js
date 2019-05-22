@@ -2,7 +2,7 @@ const fs = require("fs");
 const path = require("path");
 
 const iconLibraryFolder = path.join(__dirname, "../src/assets/images/icons");
-const iconLibraryFile = path.join(__dirname, "../src/app/icon-library/icon-library.source.ts");
+const iconLibraryFile = path.join(__dirname, "../src/app/shared/icon-library/icon-library.source.ts");
 const iconTemplate = `	'[ICON_FILE_NAME]':\n		'[ICON_FILE_CONTENT]'`;
 let iconLibraryContent =
     "/**\n * /!\\ This file is generated automatically, do not change it in any way!\n *\n * It works by running the command `npm run build-icon-library`.\n * The command will look for every icon inside `/src/assets/images/icons` and push them into this file so we can then include them in templates like `<app-icon-library icon='icon-check.svg'></app-icon-library>`\n *\n * Make sure you change the colors of your icons to `currentColor` before running the command above, so we can change icon colors with CSS.\n */\n\n";
