@@ -1,6 +1,13 @@
 <div class="page-user">
-    <div class="container-full container-m">
-        <app-task-create (onTaskCreate)="getAllUncompletedTasks()"></app-task-create>
+    <div class="container-full container-m page-user__wrapper">
+        <header class="page-user__header">
+            <h1>NG-TODO</h1>
+            <p>
+                A tiny Angular ToDo web app, saving content locally on a JSON file through json-server.
+            </p>
+        </header>
+
+        <app-task-create class="page-user__create" (onTaskCreate)="getAllUncompletedTasks()"></app-task-create>
 
         <app-task-list
             class="page-user__uncompleted-list"
@@ -9,16 +16,27 @@
             (onUpdateTask)="refreshLists()"
         ></app-task-list>
 
-        <h1 class="page-user__heading">Completed tasks</h1>
-        <p class="page-user__notice" *ngIf="userCompletedTasks && userCompletedTasks.length < 1">
-            Your completed items will be listed here
-        </p>
-        <app-task-list
-            class="page-user__completed-list"
-            [list]="userCompletedTasks"
-            (onDeleteTask)="getAllCompletedTasks()"
-            (onUpdateTask)="refreshLists()"
-            *ngIf="userCompletedTasks && userCompletedTasks.length"
-        ></app-task-list>
+        <div class="page-user__completed">
+            <h2 class="page-user__heading">Completed tasks</h2>
+            <p class="page-user__notice" *ngIf="userCompletedTasks && userCompletedTasks.length < 1">
+                Your completed items will be listed here
+            </p>
+            <app-task-list
+                class="page-user__completed-list"
+                [list]="userCompletedTasks"
+                (onDeleteTask)="getAllCompletedTasks()"
+                (onUpdateTask)="refreshLists()"
+                *ngIf="userCompletedTasks && userCompletedTasks.length"
+            ></app-task-list>
+        </div>
     </div>
+
+    <footer class="page-user__footer">
+        <p>
+            This project can be seen on GitHub at
+            <a href="https://github.com/pmpinto/ng-todo" target="_blank" rel="nonoopener noreferrer"
+                >https://github.com/pmpinto/ng-todo</a
+            >
+        </p>
+    </footer>
 </div>

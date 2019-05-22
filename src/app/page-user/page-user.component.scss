@@ -1,9 +1,18 @@
 @import "../utils/scss/variables.scss";
 @import "../utils/scss/px-to-rem.scss";
 
+.page-user {
+    padding-bottom: rem(100);
+}
+
 .page-user__uncompleted-list {
     display: block;
     margin-bottom: rem(40);
+
+    @media ($lg) {
+        grid-column: 2;
+        margin-top: rem(20);
+    }
 }
 
 .page-user__heading {
@@ -15,7 +24,48 @@
 }
 
 .page-user__notice {
-    font-size: rem(16);
+    font-size: rem(12);
     color: $color-text-muted;
     text-align: center;
+}
+
+.page-user__completed {
+    @media ($lg) {
+        grid-column: 2;
+    }
+}
+
+.page-user__wrapper {
+    @media ($lg) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: rem(40);
+    }
+}
+
+.page-user__header {
+    text-align: center;
+    padding: rem(20) 0;
+
+    @media ($lg) {
+        padding: rem(40) 0;
+        grid-column: 1 / 3;
+    }
+}
+
+.page-user__create {
+    @media ($lg) {
+        grid-column: 1;
+    }
+}
+
+.page-user__footer {
+    padding: rem(16);
+    font-size: rem(12);
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: $color-background;
+    width: 100vw;
 }
