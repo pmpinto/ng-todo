@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core"
-import { ApiService } from "../api.service"
 import { ITask } from "../interfaces/task"
+import { ApiService } from "../shared/api.service"
 
 @Component({
     selector: "app-page-user",

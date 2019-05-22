@@ -1,7 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from "@angular/core"
 import { FormControl, FormGroup, Validators } from "@angular/forms"
-import { ApiService } from "../api.service"
-import { ITask } from "../interfaces/task"
+import { ITask } from "../../interfaces/task"
+import { ApiService } from "../../shared/api.service"
 
 @Component({
     selector: "app-task-create",

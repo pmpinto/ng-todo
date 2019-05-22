@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core"
-import { ApiService } from "../api.service"
-import { ITask } from "../interfaces/task"
+import { ITask } from "../../interfaces/task"
+import { ApiService } from "../../shared/api.service"
 
 @Component({
     selector: "app-task-list",
