@@ -1,5 +1,8 @@
 # NgTodo
 
+⚠️ This project expects a local server listening at port 3200 which is able to respond to the requests that will be made (a fake API).
+You can fire up the fake API by running `npm run api`.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.3.
 
 ## Development server
